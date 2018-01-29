@@ -1,0 +1,684 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>IPI - Cours de Java - Java 320</title>
+    
+    <meta name="description" content="" />
+    <meta name="author" content="Pierre-Julien VILLOUD" />
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/idea.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="my-navbar">
+  <a class="navbar-brand" href="index.html">
+    <img src="img/ipi.jpg" width="30" height="30" alt=""> Cours Java 320
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav nav-pills mr-auto">
+      
+    </ul>
+    <span class="navbar-text">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a class="btn btn-primary" href="https://github.com/pjvilloud/ipi-java-320-ex" target="_blank"><i class="fa fa-icon fa-gamepad"></i></a>
+            &nbsp;
+            <a class="btn btn-primary" href="mailto:pjvilloud@protonmail.com"><i class="fa fa-icon fa-envelope"></i></a>
+            &nbsp;
+            <a class="btn btn-primary" href="https://github.com/pjvilloud" target="_blank"><i class="fa fa-icon fa-github"></i></a>
+            &nbsp;
+            <a class="btn btn-primary" href="https://linkedin.com/pjvilloud" target="_blank"><i class="fa fa-icon fa-linkedin"></i></a>&nbsp;
+            <a class="btn btn-primary" href="#" id="numSlide">1</a>
+        </div>
+    </span>
+  </div>
+</nav>
+<div class="progress">
+  <div id="progress" class="progress-bar" style="width: 0%;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container-fluid" id="impress">
+
+    <div id="accueil" class="step slide" data-rel-x="0" data-y=0>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container text-center">
+            <h1 class="display-3">Bienvenue !</h1>
+            <p class="lead">
+                <h2>Pierre-Julien VILLOUD</h2>
+                <div class="big-top-margin">
+                    <img src="img/pjvilloud.jpg" class="img-bienvenue rounded mx-auto d-block" alt="Pierre-Julien VILLOUD">
+                </div>
+                <div class="big-top-margin">
+                    <h3><i class="fa fa-icon fa-envelope-square"></i>&nbsp;<a href="mailto:pjvilloud@protonmail.com">pjvilloud@protonmail.com</a></h3>
+                    <h3><i class="fa fa-icon fa-github-square"></i>&nbsp;<a href="https://github.com/pjvilloud" target="_blank">https://github.com/pjvilloud</a></h3>
+                    <h3><i class="fa fa-icon fa-linkedin-square"></i>&nbsp;<a href="https://linkedin.com/pjvilloud" target="_blank">https://linkedin.com/pjvilloud</a></h3>
+                    <h3><i class="fa fa-icon fa-globe"></i>&nbsp;<a href="http://pjvilloud.github.io" target="_blank">http://pjvilloud.github.io</a></h3>
+                </div>
+            </p>
+          </div>
+        </div>
+    </div>
+
+    <div id="introduction" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Introduction</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Jusqu'à présent, nous avons utilisé les fonctionalités standards de Java, contenues dans <em>Java SE</em>. Pour la réalisation de <em>servlets</em> et la prise en charge de <em>JSP</em>, nous allons avoir besoin des fonctionnalités de <em>Java EE</em> qui demande en plus de la JVM un serveur d'application comme Tomcat.
+            </div>
+          </div>
+          <div class="container small-font big-top-margin">
+            <ul class="list-group">
+              <li class="list-group-item">Les servlets avec Java EE</li>
+              <li class="list-group-item">Les servlets avec Spring</li>
+            </ul>
+          </div>
+          <div class="container-fluid big-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="servlets" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Les servlets avec Java EE</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;La <em>servlet</em> est un programme Java qui se situe et s'exécute sur un serveur d'application à partir d'une demande d'affichage d'une page HTML.
+            </div>
+          </div>
+          <div class="container">
+            <img src="img/servlet.png" alt="">
+          </div>
+          <div class="container-fluid little-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Il y a également des mécanismes de passage de données entre la page HTML et la servlet pour construire des applications dynamiques.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="servlets-httpservlet" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">La classe <code>HttpServlet</code></h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Pour développer une servlet, il faudra étendre la classe <code>javax.servlet.http.HttpServlet</code>.
+            </div>
+          </div>
+          <div class="container-fluid small-font">
+            <div class="row">
+              <div class="col-lg-6 little-top-margin">
+                <ul class="list-group little-top-margin">
+                  <li class="list-group-item list-group-item-success"><strong>GET</strong></li>
+                  <li class="list-group-item list-group-item-warning"><strong>POST</strong></li>
+                  <li class="list-group-item list-group-item-warning"><strong>PUT</strong></li>
+                  <li class="list-group-item list-group-item-warning"><strong>PATCH</strong></li>
+                  <li class="list-group-item list-group-item-danger"><strong>DELETE</strong></li>
+                  <li class="list-group-item">HEAD, OPTIONS, CONNECT, TRACE...</li>
+                </ul>
+              </div>
+              <div class="col-lg-6 text-left"><pre><code class="java">public abstract class HttpSerlet extends GenericServlet {
+
+  protected void doGet(...) { ... }
+
+  protected void doPost(...) { ... }
+
+  protected void doPut(...) { ... }
+
+  /*Pas de doPatch() ! Mais vous pouvez l'ajouter vous-même...*/
+
+  protected void doDelete(...) { ... }
+
+  protected void doHead(...) { ... }
+  protected void doOptions(...) { ... }
+  protected void doTrace(...) { ... }
+  //Analyse la requête d'entrée et appelle la bonne méthode doX()
+  public void service(...) {...}
+}</code></pre></div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Chaque méthode du standard Http (presque...) a son implémentation dans la classe <code>HttpServlet</code>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="servlets-doGet" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Servlet avec <code>doGet()</code></h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Commençons par une servlet simple répondant à une requête <code>GET</code> classique
+            </div>
+          </div>
+          <div class="container-fluid small-font text-left little-top-margin">
+            <div class="row">
+              <div class="col-lg-6"><pre><code class="java">public class HelloServlet extends HttpServlet {
+  @Override
+  protected void doGet(HttpServletRequest req, 
+    HttpServletResponse resp) 
+  throws ServletException, IOException {
+    resp.setContentType("text/html");
+    PrintWriter printWriter = resp.getWriter();
+    printWriter.println("&lt;html&gt;&lt;head&gt;");
+    printWriter.println("&lt;title&gt;Hello Servet&lt;/title&gt;");
+    printWriter.println("&lt;/head&gt;&lt;body&gt;");
+    printWriter.println("&lt;h1&gt;Hello !&lt;/h1&gt;");
+    printWriter.println("&lt;/body&gt;&lt;/html&gt;");
+    printWriter.close();
+  }
+}</code></pre></div>
+              <div class="col-lg-6"><pre><code class="xml">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;web-app version="3.0"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"&gt;
+    
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;HelloServlet&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/sayhello&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;</code></pre></div>
+            </div>
+          </div>
+          <div class="container-fluid little-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une fois l'application déployée dans 
+                <div class="btn-group">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><code>$CATALINA_HOME</code></button>
+                <div class="dropdown-menu">
+                  <li class="dropdown-item dropdown-submenu">
+                    <a tabindex="-1" href="#">
+                      ROOT
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item dropdown-submenu">
+                        <a tabindex="-1" href="#">
+                          WEB-INF
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <li class="dropdown-item dropdown-submenu">
+                              <a tabindex="-1" href="#">
+                                classes
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li>
+                                  <a href="#" bypass class="dropdown-item interaction" data-module="git" data-action="status">
+                                    HelloServlet.class
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                          </li>
+                          <li>
+                            <a href="#" bypass class="dropdown-item interaction" data-module="git" data-action="compare">
+                              web.xml
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+              et le serveur lancé, on verra <em>Hello !</em> affiché lorsqu'on consulte l'URL <br> <code>http://localhost:8080/sayhello</code>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="servlets-webxml" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Le <em>Deployment descriptor</em> <code>web.xml</code></h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Le fichier <code>web.xml</code> définir le mapping entre les URL et les servlets. Le serveur web gèer chaque requête en la confrontant au mapping de ce fichier pour appeler la bonne méthode de la bonne classe.
+            </div>
+          </div>
+          <div class="container small-font text-left">
+            <pre><code class="xml">&lt;servlet&gt;
+    &lt;servlet-name>hello&lt;/servlet-name&gt;
+    &lt;servlet-class>HelloServlet&lt;/servlet-class&gt;
+    &lt;init-param&gt;
+        &lt;param-name>nom&lt;/param-name&gt;
+        &lt;param-value>Bob&lt;/param-value&gt;
+    &lt;/init-param&gt;
+
+     &lt;servlet-mapping&gt;
+        &lt;servlet-name>hello&lt;/servlet-name&gt;
+        &lt;url-pattern>/hello/*&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/servlet&gt;</code></pre>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Tous les URL sous la forme <code>http://locahost:8080/hello/*</code> seront redirigés vers la servlet <code>HelloServlet</code>. On peut récupérer le paramètre <em>nom</em> avec <code>String nomDefault = getServletConfig().getInitParameter("nom");</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="servlets-doGetparam" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Servlet avec <code>doGet()</code> et des paramètres</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Pour la deuxième servlet, on ajoute la récupération de paramètres dans l'URL <code>http://localhost:8080?nom=IPI</code> ou le paramètre <em>nom</em> vaut <em>IPI</em>.
+            </div>
+          </div>
+          <div class="container-fluid small-font text-left little-top-margin">
+            <div class="row">
+              <div class="col-lg-6"><pre><code class="java">public class HelloServlet extends HttpServlet {
+  @Override
+  protected void doGet(HttpServletRequest req, 
+    HttpServletResponse resp) 
+  throws ServletException, IOException {
+    resp.setContentType("text/html");
+    String nom = req.getParameter("nom");
+    PrintWriter printWriter = resp.getWriter();
+    printWriter.println("&lt;html&gt;&lt;head&gt;");
+    printWriter.println("&lt;title&gt;Hello Servet&lt;/title&gt;");
+    printWriter.println("&lt;/head&gt;&lt;body&gt;");
+    printWriter.println("&lt;h1&gt;Hello " + nom + "!&lt;/h1&gt;");
+    printWriter.println("&lt;/body&gt;&lt;/html&gt;");
+    printWriter.close();
+  }
+}</code></pre></div>
+              <div class="col-lg-6"><pre><code class="xml">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;web-app version="3.0"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"&gt;
+    
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;HelloServlet&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/sayhello&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;</code></pre></div>
+            </div>
+          </div>
+          <div class="container-fluid little-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une fois l'application déployée dans 
+                <div class="btn-group">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><code>$CATALINA_HOME</code></button>
+                <div class="dropdown-menu">
+                  <li class="dropdown-item dropdown-submenu">
+                    <a tabindex="-1" href="#">
+                      ROOT
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item dropdown-submenu">
+                        <a tabindex="-1" href="#">
+                          WEB-INF
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <li class="dropdown-item dropdown-submenu">
+                              <a tabindex="-1" href="#">
+                                classes
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li>
+                                  <a href="#" bypass class="dropdown-item interaction" data-module="git" data-action="status">
+                                    HelloServlet.class
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                          </li>
+                          <li>
+                            <a href="#" bypass class="dropdown-item interaction" data-module="git" data-action="compare">
+                              web.xml
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+              et le serveur lancé, on verra <em>Hello IPI!</em> affiché lorsqu'on consulte l'URL <br> <code>http://localhost:8080/sayhello?nom=IPI</code>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="servlets-doPost" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Servlet avec <code>doPost()</code></h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Lorsqu'on soumet les données d'un formulaire, on utilise généralement la méthode <code>POST</code>.
+            </div>
+          </div>
+          <div class="container-fluid small-font text-left little-top-margin">
+            <div class="row">
+              <div class="col-lg-6"><pre><code class="java">public class HelloServlet extends HttpServlet {
+  @Override
+  protected void doPost(HttpServletRequest req, 
+    HttpServletResponse resp) 
+  throws ServletException, IOException {
+    //Même code que pour doGet
+  }
+}</code><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;&lt;!--index.html--&gt;
+&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;title&gt;Bonjour&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;form action="http://localhost:8080/sayhello" method="post"&gt;
+  Votre nom : &lt;input type="text" name="nom" value=""&gt;
+  &lt;input type="submit" value="OK"&gt;
+&lt;/form&gt;
+&lt;/body&gt;&lt;/html&gt;
+</code></pre></div>
+              <div class="col-lg-6"><pre><code class="xml">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;web-app version="3.0"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"&gt;
+    
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;HelloServlet&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/sayhello&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;</code></pre></div>
+            </div>
+          </div>
+          <div class="container-fluid little-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une fois l'application déployée dans 
+                <div class="btn-group">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><code>$CATALINA_HOME</code></button>
+                <div class="dropdown-menu">
+                  <li class="dropdown-item dropdown-submenu">
+                    <a tabindex="-1" href="#">
+                      ROOT
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item dropdown-submenu">
+                        <a tabindex="-1" href="#">
+                          WEB-INF
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <li class="dropdown-item dropdown-submenu">
+                              <a tabindex="-1" href="#">
+                                classes
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li>
+                                  <a href="#" bypass class="dropdown-item interaction" data-module="git" data-action="status">
+                                    HelloServlet.class
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                          </li>
+                          <li>
+                            <a href="#" bypass class="dropdown-item interaction" data-module="git" data-action="compare">
+                              web.xml
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropdown-item">
+                        index.html
+                      </li>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+              et le serveur lancé, lorsqu'on consultera <code>http://localhost:8080/index.html</code> on verra le formulaire qui une fois validé affichera <em>Hello nomFormulaire !</em>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  <div id="servlets-cycle" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Cycle de vie d'une servlet</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;La méthode <code>init()</code> est appelée une fois lors de la première requête sur la servlet. On peut appeler la méthode <code>destroy()</code> si l'on souhaite détruire la servlet.
+          </div>
+        </div>
+        <div class="container small-font big-top-margin">
+          <img src="img/servlethttp.png" alt="">
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font big-top-margin " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Ces méthodes peuvent être utiles pour gérer des opérations de connexion/déconnexion à une base de données, d'ouverture/fermeture de fichier...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="servletsspring" class="step slide">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid text-center">
+        <h1 class="display-3">Les servlets avec Spring</h1>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font" role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;La configuration des servlets classiques n'est pas très pratique car il est nécessaire de passer par le fichier <code>web.xml</code>. De plus, lorsqu'on a deux requêtes sur le même URL avec la même méthode, on n'est obligé de passer par la même méhode <code>doX()</code>.
+          </div>
+        </div>
+        <div class="container small-font">
+          <img src="img/springmvc.png" alt="">
+        </div>
+        <div class="container-fluid">
+          <div class="alert alert-primary small-font " role="alert">
+              <i class="fa fa-icon fa-info-circle"></i>&nbsp;Le déploiement doit être géré également à la main (ou via l'IDE). Voyons ce que Spring et Spring Boot permettent de faire.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="servletsspring-controleurs" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Contrôleurs Spring</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une classe peut être définie en tant que Contrôleur Spring avec l'annotation <code>@RestController</code>.
+            </div>
+          </div>
+          <div class="container  text-left">
+            <pre><code class="java">@RestController
+@RequestMapping(value = "/sayhello")
+public class HelloController {
+
+  //...
+
+}
+</code></pre></div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Un chemin de base pour ce contrôleur peut être défini avec l'annotation <code>@RequestMapping</code>. Ce contrôleur gérera toutes les requêtes commençant par <code>/vehicules</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="servletsspring-mapping" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Mapping de requête</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Dans le contrôleur, il est alors possible de définir des mappings permettant d'<em>intercepter</em> les requêtes HTTP en fonction de leur chemin et de leurs paramètres avec l'annotation <code>@RequestMapping</code>.
+            </div>
+          </div>
+          <div class="container-fluid small-font text-left">
+            <pre><code class="java">@RequestMapping(
+  method = RequestMethod.POST, //Méthode HTTP : GET/POST/PATCH/PUT/DELETE
+  consumes = "application/json", //Type MIME des données passées avec la requête : JSON, XML, Texte...
+  produces = "application/json", //Type MIME des données fournies dans la réponse
+  value = "/vehicules" //Chemin du mapping (concaténé avec l'éventuel chemin présent au niveau du contrôleur)
+)
+public ...
+
+            </code></pre>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une requête peut ne pas fournir de données en entrée. Et une réponse peut ne pas fournir non plus de données en sortie.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="servletsspring-queryparams" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Récupération des <code>QueryParams</code></h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Les <code>QueryParams</code> sont les paramètres qui sont passés dans l'url. Par exemple <code>http://localhost:8080?page=1&size=15</code>. Il y a deux paramètres : <code>page</code> valorisé à 1 et <code>size</code> valorisé à 15. Pour les récupérer, on utilise l'annotation <code>@RequestParam</code>.
+            </div>
+          </div>
+          <div class="container big-top-margin text-left">
+          <pre><code class="java">@RequestMapping(...)
+public String exemple(
+  @RequestParam("page") Integer page, 
+  @RequestParam("size") Integer size)
+{
+    ...
+}</code></pre>
+          </div>
+          <div class="container-fluid big-top-margin">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Il est préférable d'utiliser ce système lorsqu'il n'y a pas trop de paramètres.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="servletsspring-urlportion" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Paramètres dans l'URL</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Une syntaxe fréquente dans une application web consiste à intégrer des paramètres directement dans l'URL comme par exemple <code>http://localhost:8080/hello/1</code>
+            </div>
+          </div>
+          <div class="container text-left">
+            <pre><code class="java">@RequestMapping(value = "/{name}", ...)
+public String hello(
+  @PathVariable (value = "name") String name)
+{
+    ...
+}</code></pre>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Cette notation est très utilisée dans les applications REST.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="servletsspring-requestbody" class="step slide">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center">
+          <h1 class="display-3">Corps de la requête</h1>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font" role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;Lorsqu'on veut envoyer des données plus complexes, comme à la création d'un objet par exemple, on utilise le corps de la requête avec l'annotation <code>@RequestBody</code>, cela correspond au champ <code>data</code> de la requête.
+            </div>
+          </div>
+          <div class="container text-left">
+            <pre><code class="java">@RequestMapping(...)
+public String createVehicule (
+  @RequestBody Vehicule vehicule)
+{
+    ...
+}</code></pre>
+          </div>
+          <div class="container-fluid">
+            <div class="alert alert-primary small-font " role="alert">
+                <i class="fa fa-icon fa-info-circle"></i>&nbsp;On envoie dans ce champ des données structuées en JSON ou en XML. Les données serialisées doivent correspondre à l'entité dans laquelle on place l'objet. Sinon, les données seront stockées dans une <code>Map</code>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<script src="js/impress.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/script.js"></script>
+
